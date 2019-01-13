@@ -35,14 +35,35 @@ I am going to stick only on putting my application behind a reverse proxy server
 
 ##### My Struggle 
 
-Creating a droplet seems to be easy. It is actually easy because the interface is friendly and the whole process takes only a few steps. So, why did I struggle to create simple droplet? Actually, I created my first droplets successfully. But, I wanted to understand what was going on behind the scene, what flexibility margin the plateform gives me, and how I can dictate my own rules for most of the featuress instead of letting Digital Ocean setting up everything for me. Let's be Engineers! 
+Creating a server (droplet) on Digital Ocean seems to be easy. It is actually easy because the interface is friendly and the whole process takes only a few steps. So, why did I struggle to create a simple droplet? In fact, I created my first droplets successfully. But, I wanted to understand what was going on behind the scene, what flexibility margin the plateform gives me, and how I can dictate my own rules for most of the featuress instead of letting Digital Ocean setting up everything for me. Let's be Engineers! 
 
-I worked a few times with SSH and it made my life easier. So, when I saw that we can use SSH to login remotely to my droplet, I had to try it. I created my SSH key pair with Git Bash but the first attempts did not work out well. The server was not recognizing my keys. I encountered a weird behavior of the web console of my droplet. The text I paste on the console seems to not be the text I copied: Some characters got capitalized and others just transform different character. I am pretty sure that there is a good explanation behind that behavior but I did not try understand it because I have always hated console that you cannot custumize. I was trying at all cost to go around the web console to set up my server. A tool I used regulary to connect to my school server is Putty. It is the tool that saved my journey. 
+I worked a few times with SSH and it made my life easier. So, when I saw that we can use SSH to login remotely to my droplet, I had to try it. I created my SSH key pair with Git Bash but the first attempts did not work well for me. The server was not recognizing my keys. Another problem I encountered was the weird behavior of the web console. The text I pasted on the console seems to not be the text I copied: Some characters got capitalized and others just transform different characters. I am pretty sure that there is a good explanation behind that behavior but I did not try understand. By the way, I don't like consoles that I cannot custumize the appearence. So, I was trying at all cost to go around the ugly web console to set up my server. A tool I used regulary to connect to my school server is Putty. It is the tool that saved my journey. 
 
 ##### My Relief
-After I went over few onlines articles about SSH, Putty, and PuttyGen, I followed these steps to create my droplet: 
+After I went over a few online articles about Ubuntu, SSH, Putty, PuttyGen, I followed these steps to create my droplet: 
   - Download Putty and PuttyGen
   - Generate a SSH public/private keys pair
   - Add the public key the droplet
   - Change the server's name
   - Test remote connection with Putty
+
+### Create a Non Root User for Your Droplet
+
+It is recommended to create a non root user for our droplet in order to set what our account can do or cannot do. Recall that the root user is a non human superuser. it has little restrictions than a user created user. If you have a non root user, you can grant it the ability ot perform actions as superuser. You will usually be prompted for the password if you want to perform such actions. This is to make sure that you are an actual human and are really who you say you are.
+
+##### Let's do it
+
+  - Add new user
+  - Set new user privileges
+  - Login with as the new user
+  - Set up SSH for new user
+  - Test SSH service
+
+### Setting up Github in our Droplet
+
+At this stage, I quickly understood that cloning my repositories directly from the droplet would be the easiest way to get my application files on the server. I was surprised that I could not just clone my repository like the way I do on my windows computer. I found out that I had to link my server with Github but setting a SSH. My concern was how I was going to transport the key easily from the server to my local machine. I am not a big fan of copying text from the terminal as I usually use ctrl+C and end up cancelling my running processes. I tried using SFTP on Git Bash and it work out fine. I also used WinSCP and worked fine and it was the easiest way to download my file. But the Bash method seems to be the method I am going to be using because it should work most operating system. Long story short, here is how I did to set up the Github SSH.
+
+  - Generate a pair of SSH keys on my server
+  - Download the public key to my local machine
+  - Add key to my Github account
+
