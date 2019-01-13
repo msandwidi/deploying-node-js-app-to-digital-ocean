@@ -7,3 +7,4 @@ In th past, I have always used Heroku for hosting my NodeJS applications. I trul
 My first few attempts were faillures and frustrations because I was just copying commands arround the different channels on Digital Ocean and pasting on the browser console. I did not really (try to) understand the commands. I just wanted to see a working hello world NodeJS application. Five hours after I started my hello world project, I got my NodeJS application to run. I was relief to see the hello world on the console. I let everything settle down for about 3 hours before I restart the project again but with the objective of understanding the overall process. 
 
 The following are the steps I took to get my application to run on a Digital Ocean droplet.
+
