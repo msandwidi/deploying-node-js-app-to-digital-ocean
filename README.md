@@ -53,7 +53,7 @@ After I went over a few online articles about Ubuntu, SSH, Putty, PuttyGen, I fo
 
 As I said previously, there many ways of solving problems in software world. Putty save my life in this project but I still felt that I was on control of the process. I restarted over the same exercise using the Git Bash to generate and connect to my server. So, I:
 
-  - created the SSH key with ssh-keygen -b 4096 -t rsa -C "shoudou@outlook.com" in the hidden ssh folder on my local machine
+  - created the SSH key with ssh-keygen -b 4096 -t rsa -C "my@email.com" in the hidden ssh folder on my local machine
   - copied the public key to the new droplet
   - add the new ssh identity to the authorized identities list with eval $(ssh-agent) because I already had multiple id file in my .ssh folder
   - connected with ssh root@hostname
@@ -64,6 +64,10 @@ I imagined a scenario in which I want to add a new SSH key to a server that is b
   - generated a new pair of keys
   - transfered the public key using ssh-copy-id -i ~/.ssh/newkey.pub root@hostname
   - tested the new key with ssh -i ~/.ssh/newkey.ppk root@hostname
+
+##### In Case ssh-copy-id did not work
+
+In case the previous method did not work but you were able to login via SSH without issue, theoritically speaking, you should also be able to login using SFTP. I tried this process and it also worked fine. Here is what I did.
 
 ### Create a Non Root User for Your Droplet
 
