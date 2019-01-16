@@ -61,7 +61,7 @@ After I went over a few online articles about Ubuntu, SSH, Putty, PuttyGen, I fo
 As I said previously, there many ways of solving problems in software world. Putty save my life in this project but I still felt that I was on control of the process. I restarted over the same exercise using the Git Bash to generate and connect to my server. So, I:
 
   - created the SSH key with 
-  ```sh
+  ```bash
   ssh-keygen -b 4096 -t rsa -C "my@email.com"
   ```
   in the hidden ssh folder on my local machine
@@ -142,7 +142,8 @@ At this stage, I quickly understood that cloning my repositories directly from t
   ```bash
   get .ssh/id_rsa_github.pub
   ```
-  - Add key to my Github account
-  This is done in my account's Settings.
+  - Add key to my Github account. This is done in my account's Settings.
+
+Now I am set to do great things with my half way set server. PowPow!!!
 
 
